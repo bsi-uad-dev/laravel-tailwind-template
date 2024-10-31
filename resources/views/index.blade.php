@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('body')
-    @include('include.alert')
+    @include('includes.alert')
     
 @endsection
