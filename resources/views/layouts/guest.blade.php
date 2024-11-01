@@ -11,12 +11,13 @@
     @stack('style')
 </head>
 <body>
-    @include('includes.sidenav')
 
-    <div class="p-4 mt-20 sm:mr-4 sm:ml-64">
+    @include('includes.navbar')
+
+    <div class="mt-20">
         @yield('body')
     </div>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     @stack('script')
 </body>
