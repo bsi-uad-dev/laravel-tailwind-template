@@ -9,6 +9,8 @@
         <x-main-header title="Ini Example Page" />
     </header>
 
+    @include('includes.alert')
+
     <section class="card" id="#breadcrumb">
         <x-main-header title="Penggunaan Breadcrumb" />
         <p class="text-sm">breadcrum menggunakan <span class="text-blue-500 font-medium">array named key</span>, <span
