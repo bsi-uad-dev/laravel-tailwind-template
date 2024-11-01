@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    .card {
+        @apply w-full bg-white rounded-lg shadow p-4;
+    }
+    
+    .btn-primary {
+        @apply w-fit text-base font-semibold text-white py-2 px-4 rounded-xl bg-primary shadow-primary/50 shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+    }
+
+    /* table */
+    .wrap-table{
+        @apply relative overflow-x-auto shadow-md sm:rounded-lg;
+    }
+
+    .table{
+        @apply w-full text-sm text-left rtl:text-right text-gray-500;
+    }
+
+    .table .thead{
+        @apply text-xs text-gray-700 uppercase bg-gray-50;
+    }
+
+    .tbody .tr{
+        @apply bg-white border-b hover:bg-gray-50;
+    }
+
+    .tr .th{
+        @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap;
+    }
+    /* table */
+
+    /* badge */
+    .badge-blue{
+        @apply bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300;
+    }
+
+    .badge-red{
+        @apply bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300;
+    }
+
+    .badge-green{
+        @apply bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300;
+    }
+
+    .badge-yellow{
+        @apply bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300;
+    }
+    /* badge */
+
+    /* icon */
+    .icon-edit{
+        @apply bg-green-600 p-2 rounded-lg text-white;
+    }
+    
+    .icon-detail{
+        @apply bg-blue-600 p-2 rounded-lg text-white;
+    }
+    
+    .icon-hapus{
+        @apply bg-red-600 p-2 rounded-lg text-white;
+    }
+    /* icon */
+}
