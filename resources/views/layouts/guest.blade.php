@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    @include('includes.navbar')
+    @include('includes.navbar-guest')
 
     <div class="mt-20 max-w-screen-xl mx-auto p-4">
         @yield('body')

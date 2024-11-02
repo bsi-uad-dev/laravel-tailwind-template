@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view("/", "pagesCustomer.index")->name('home');
-Route::view("/form", "pagesCustomer.form")->name('form');
+Route::view("/", "pages-Guest.index")->name('guest');
+
+Route::view("/home", "pages-Customer.index")->name('home');
+Route::view("/form", "pages-Customer.form")->name('form');
+
 Route::view("/example", "pages.example")->name('example-page');
