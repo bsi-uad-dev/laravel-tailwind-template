@@ -19,6 +19,8 @@
     <div class="mt-20 max-w-screen-xl mx-auto p-4">
         @yield('body')
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 
     <script>
         //memutar arrah arrow dropdown
@@ -53,5 +55,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     @stack('script')
+    @yield('custom-script')
 </body>
 </html>
