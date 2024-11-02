@@ -6,6 +6,11 @@
 
 
 @layer base {
+
+    .scrolled{
+        @apply bg-white shadow-md;
+    }
+
     .card {
         @apply w-full bg-white rounded-lg shadow p-4;
     }

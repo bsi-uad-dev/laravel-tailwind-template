@@ -15,7 +15,7 @@ export default {
                 primary: "#003973",
             },
             fontFamily: {
-                sans: ['Noto Sans JP', 'sans-serif'],
+                sans: ['Poppins', 'sans-serif'],
             },
         },
     },

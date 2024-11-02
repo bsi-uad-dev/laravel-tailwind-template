@@ -4,7 +4,7 @@
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap">{{ config('app.name') }}</span>
         </a>
-        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        {{-- <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             @auth
                 <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
@@ -56,11 +56,25 @@
                         aria-current="page">Home</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="/form"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
                 </li>
             </ul>
-        </div>
+        </div> --}}
+
+        <a href="{{ route('example-page') }}" class="btn-primary">Admin</a>
 
     </div>
 </nav>
+
+<script>
+    // transparanrt topbar saat scrolling
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>

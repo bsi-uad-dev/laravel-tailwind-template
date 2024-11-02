@@ -1,36 +1,9 @@
 @extends('layouts.guest')
 
 @section('body')
-    <header>
-        <div class="card bg-primary flex justify-between items-center relative">
-            <div class="py-10 px-8">
-                <div class="text-3xl font-bold text-white">
-                    Selamat Datang <span class="font-normal">Nama Lengkap User...</span>
-                </div>
-                <div class="text-md font-sans text-white font-normal">
-                    di Sistem Pengajuan (EC) Ethical Clearance
-                </div>
-            </div>
-            <div class="absolute bottom-0 right-0 flex justify-end px-8">
-                <div class="w-[200px]">
-                    <img src="{{ asset('img/doc.png') }}" alt="Dokumen" class="w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <section class="mt-4">
-        <div class="w-full">
-            <button
-                class="w-full font-bold border-dashed border-2 border-primary text-primary rounded-lg py-5 px-10 text-sm duration-150">
-                + Pengajuan Ethical Clearance
-            </button>
-        </div>
-    </section>
 
     <section class="card mt-4">
-        <ol class="items-center sm:flex">
+        <ol class="items-center sm:flex m-4">
             <li class="relative mb-6 sm:mb-0">
                 <div class="flex items-center text-primary">
                     <span
@@ -77,5 +50,36 @@
                 </div>
             </li>
         </ol>
+
+        <div class="card border-2 border-dashed border-slate-400" id="#input">
+            <x-main-header title="Inputan" />
+            <div class="my-5">
+                <x class="text-lg">default</x>
+                <x-basic-input type="text" name="inputan" id="input" value="{{ old('inputan') }}" />
+            </div>
+            <div class="my-5">
+                <p class="text-lg">required</p>
+                <x-basic-input type="text" name="inputan" id="input" value="{{ old('inputan') }}" required />
+            </div>
+            <div class="my-5">
+                <p class="text-lg">disabled</p>
+                <x-basic-input type="text" name="inputan" id="input" value="{{ old('inputan', 'ini disabled') }}"
+                    disabled />
+            </div>
+            <div class="my-5">
+                <p class="text-lg">readonly</p>
+                <x-basic-input type="text" name="inputan" id="input" value="{{ old('inputan', 'ini readonly') }}"
+                    readonly />
+            </div>
+            <div class="my-5">
+                <p class="text-lg">with logic blade</p>
+                <x-basic-input type="text" name="inputan" id="input"
+                    value="{{ old('inputan', 'ini dengan logic blade disabled') }}" :disabled="true" />
+            </div>
+            <div class="flex justify-end my-2">
+                <div class="btn-secondary">Cancel</div>
+                <div class="btn-primary">Submit</div>
+            </div>
+        </div>
     </section>
 @endsection
