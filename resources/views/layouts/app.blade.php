@@ -18,6 +18,37 @@
         @yield('body')
     </div>
 
+    <script>
+        //memutar arrah arrow dropdown
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-user');
+            const icon = document.getElementById('dropdown-icon');
+            const isExpanded = dropdown.classList.toggle('hidden');
+
+            // Toggle rotation class on icon
+            if (isExpanded) {
+                icon.classList.remove('rotate-180');
+                icon.classList.add('rotate-0');
+            } else {
+                icon.classList.remove('rotate-0');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Tutup dropdown saat mengklik di luar area dropdown
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-user');
+            const icon = document.getElementById('dropdown-icon');
+            const button = document.querySelector('[data-dropdown-toggle="dropdown-user"]');
+
+            if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+                // Pastikan dropdown tertutup dan ikon dalam posisi awal
+                dropdown.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     @stack('script')
 </body>
