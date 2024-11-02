@@ -13,10 +13,9 @@ export default {
         extend: {
             colors: {
                 primary: "#003973",
-                secondary: "#FFCC00",
             },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Noto Sans JP', 'sans-serif'],
             },
         },
     },

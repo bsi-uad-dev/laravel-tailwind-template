@@ -59,6 +59,7 @@
                 value="{{ old('inputan', 'ini dengan logic blade disabled') }}" :disabled="true" />
         </div>
         <div class="flex justify-end my-2">
+            <div class="btn-secondary">Cancel</div>
             <div class="btn-primary">Submit</div>
         </div>
     </section>
