@@ -1,90 +1,84 @@
 @extends('layouts.guest')
 
 @section('body')
-    <header>
-        <div class="card bg-gradient-to-tr from-primary to-primary/60 flex justify-between items-center relative">
-            <div class="py-10 px-8">
-                <div class="text-3xl font-bold text-white">
-                    Selamat Datang <span class="font-normal">Nama Lengkap User...</span>
-                </div>
-                <div class="text-md font-sans text-white font-normal">
-                    di Sistem Pengajuan (EC) Ethical Clearance
-                </div>
-            </div>
-            <div class="absolute bottom-0 right-0 flex justify-end px-8">
-                <div class="w-[200px]">
-                    <img src="{{ asset('img/doc.png') }}" alt="Dokumen" class="w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <section class="mt-4">
-        <div class="w-full flex">
-            <a href="/form" class="flex justify-center items-center w-full font-bold text-lg hover:bg-slate-50 hover:shadow-lg border-dashed border-2 border-primary text-primary rounded-lg py-5 px-10 me-4 duration-150">
-                + Pengajuan Ethical Clearance
+    <div class="mx-auto max-w-screen-xl">
+        <div
+            class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+            <a href="#"
+                class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
+                <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 14">
+                    <path
+                        d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
+                </svg>
+                Tutorial
             </a>
-            <a href="" class="card w-fit flex flex-col items-center hover:bg-slate-50">
-                <img src="{{ asset('img/icon-folder.png') }}" alt="">
-                <div class="text-sm font-semibold text-slate-600">Riwayat</div>
+            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">How to quickly deploy a
+                static website</h1>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">Static websites are now used to
+                bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both
+                web designers and developers.</p>
+            <a href="#"
+                class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                Read more
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
             </a>
         </div>
-    </section>
-
-    <section class="card mt-4 w-1/2">
-        <div class="flex justify-between my-2">
-            <div class="text-md font-semibold text-slate-800 w-2/4 truncate">
-                Judul Pengajuan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, numquam!
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <a href="#"
+                    class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                    <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 18 18">
+                        <path
+                            d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z" />
+                    </svg>
+                    Design
+                </a>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Start with Flowbite Design System
+                </h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to
+                    bootstrap lots of websites and are becoming the basis for a variety of tools that even influence
+                    both web designers and developers.</p>
+                <a href="#"
+                    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
+                    more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
             </div>
-            <div class="text-md font-medium text-slate-500">18348913781374174713</div>
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <a href="#"
+                    class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
+                    <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+                    </svg>
+                    Code
+                </a>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Best react libraries around the
+                    web</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to
+                    bootstrap lots of websites and are becoming the basis for a variety of tools that even influence
+                    both web designers and developers.</p>
+                <a href="#"
+                    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
+                    more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
         </div>
-        <ol class="items-center sm:flex">
-            <li class="relative mb-6 sm:mb-0">
-                <div class="flex items-center text-primary">
-                    <span
-                        class="flex items-center sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                        <i class="fa-solid fa-circle-check me-2"></i>
-                        Langkah1
-                    </span>
-                    <div class="mx-4 flex w-full bg-primary h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div class="mt-3 sm:pe-8">
-                    <div class="badge-green">Menunggu</div>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        December 2, 2021</time>
-                </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-                <div class="flex items-center text-primary">
-                    <span
-                        class="flex items-center sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                        <i class="fa-solid fa-circle-check me-2"></i>
-                        Langkah2
-                    </span>
-                    <div class="mx-4 flex w-full bg-gray-200 h-0.5"></div>
-                </div>
-                <div class="mt-3 sm:pe-8">
-                    <div class="badge-yellow">Menunggu</div>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        December 2, 2021</time>
-                </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-                <div class="flex items-center text-slate-400">
-                    <span
-                        class="flex items-center sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                        <span class="me-2 bg-slate-100 rounded-full p-1 w-5 h-5 flex justify-center items-center">3</span>
-                        Langkah3
-                    </span>
-                    <div class="mx-4 flex w-full bg-gray-200 h-0.5"></div>
-                </div>
-                <div class="mt-3 sm:pe-8">
-                    <div class="badge-blue">Menunggu</div>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        December 2, 2021</time>
-                </div>
-            </li>
-        </ol>
-    </section>
+    </div>
 @endsection
