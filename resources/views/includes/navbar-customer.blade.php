@@ -45,8 +45,9 @@
                                 role="menuitem">Dashboard</a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100"
-                                role="menuitem">Sign out</a>
+                            <a href="{{ route('login-page') }}"
+                                class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100" role="menuitem">Sign
+                                out</a>
                         </li>
                     </ul>
                 </div>
