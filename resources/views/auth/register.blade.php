@@ -28,7 +28,7 @@
     </div>
 
     <div class="min-h-screen flex items-center justify-center">
-        <div class="flex md:w-4/6 w-full bg-gray-200 rounded-xl shadow-lg overflow-hidden">
+        <div class="flex md:w-4/6 w-full bg-white rounded-xl shadow-lg overflow-hidden">
             <div class="md:w-3/6">
                 <form action="" method="post">
                     @csrf
@@ -38,9 +38,10 @@
                                 class="h-24 w-full object-cover overflow-hidden rounded-xl" />
                         </div>
                         <div class="mb-5 flex items-center space-x-3 rtl:space-x-reverse">
-                            <img src="{{ asset('img/logo-ec.svg') }}" class="h-5" alt="Flowbite Logo">
+                            <img src="{{ asset('img/logo-ec.svg') }}" class="h-5 xl:h-8" alt="Flowbite Logo">
                             <div class="">
-                                <div class="self-center text-slate-600 text-xl whitespace-nowrap  font-extrabold">
+                                <div
+                                    class="self-center text-slate-600 text-xl xl:text-3xl font-extrabold whitespace-nowrap">
                                     {{ config('app.name') }}
                                 </div>
                             </div>
@@ -100,11 +101,11 @@
 
                         <div class="mt-8">
                             <button class="btn-primary w-full">
-                                Sign In</button>
+                                Sign Up</button>
                         </div>
                         <div class="mt-8 text-center text-gray-500 whitespace-nowrap">
-                            Apakah Anda Belum Mempunyai Akun? <a href="{{ route('register-page') }}"
-                                class="text-gray-500 hover:text-gray-700 font-semibold underline">Sign Up</a>
+                            Apakah Anda Sudah Mempunyai Akun? <a href="{{ route('login-page') }}"
+                                class="text-gray-500 hover:text-gray-700 font-semibold underline">Sign In</a>
                         </div>
                     </div>
                 </form>
