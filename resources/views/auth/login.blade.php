@@ -28,7 +28,7 @@
     </div>
 
     <div class="min-h-screen flex items-center justify-center">
-        <div class="flex md:w-4/6 w-full bg-gray-200 rounded-xl shadow-lg overflow-hidden">
+        <div class="flex md:w-4/6 w-full bg-white rounded-xl shadow-lg overflow-hidden">
             <div class="md:w-3/6">
                 <form action="" method="post">
                     @csrf
@@ -41,7 +41,7 @@
                             <img src="{{ asset('img/logo-ec.svg') }}" class="h-5 xl:h-8" alt="Flowbite Logo">
                             <div class="">
                                 <div
-                                    class="self-center text-slate-600 text-xl xl:text-3xl whitespace-nowrap font-extrabold">
+                                    class="self-center text-slate-600 text-xl xl:text-3xl font-extrabold whitespace-nowrap">
                                     {{ config('app.name') }}
                                 </div>
                             </div>
@@ -58,15 +58,19 @@
                         </div>
                         <div class="mt-4">
                             <label for="" class="text-sm text-slate-400 font-semibold">Username:</label>
-                            <input required placeholder="Username..." name="username"
-                                class=" text-gray-700 focus:outline-none focus:shadow-outline  border border-gray-300 focus:ring-2 focus:ring-blue-800 rounded-xl focus:bg-blue-50 py-2 px-4 block w-full appearance-none"
-                                type="text" />
+                            <x-basic-input type="text" name="username" placeholder="Username . . . " id="input"
+                                value="{{ old('inputan') }}" />
                         </div>
                         <div class="mt-4">
-                            <label for="" class="text-sm text-slate-400 font-semibold">Password:</label>
-                            <input required placeholder="Password..." name="password"
-                                class=" text-gray-700 focus:outline-none focus:shadow-outline  border border-gray-300 focus:ring-2 focus:ring-blue-800 rounded-xl focus:bg-blue-50 py-2 px-4 block w-full appearance-none"
-                                type="password" />
+                            <label for="input" class="text-sm text-slate-400 font-semibold">Password:</label>
+                            <div class="relative">
+                                <x-basic-input type="password" name="Password" placeholder="Password . . . "
+                                    id="passwordInput" value="{{ old('inputan') }}" />
+                                <button type="button" onclick="togglePassword()"
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500">
+                                    <i id="toggleIcon" class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="mt-4 flex justify-end w-full">
                             <a href="#"
@@ -77,7 +81,7 @@
                             <button class="btn-primary w-full">
                                 Sign In</button>
                         </div>
-                        <div class="mt-8 text-center text-gray-500 whitespace-nowrap">
+                        <div class="mt-8 text-center text-gray-500 whitespace-now">
                             Apakah Anda Belum Mempunyai Akun? <a href="{{ route('register-page') }}"
                                 class="text-gray-500 hover:text-gray-700 font-semibold underline">Sign Up</a>
                         </div>
@@ -91,6 +95,24 @@
         </div>
     </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const toggleIcon = document.getElementById('toggleIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
 </body>
 
 </html>

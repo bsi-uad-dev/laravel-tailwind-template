@@ -75,29 +75,36 @@
                                 type="text" />
                         </div>
                         <div class="mt-4">
-                            <label for="" class="text-sm text-slate-400 font-semibold">Password:</label>
-                            <input required placeholder="Password..." name="password"
-                                class=" text-gray-700 focus:outline-none focus:shadow-outline  border border-gray-300 focus:ring-2 focus:ring-blue-800 rounded-xl focus:bg-blue-50 py-2 px-4 block w-full appearance-none"
-                                type="password" />
+                            <label for="input" class="text-sm text-slate-400 font-semibold">Password:</label>
+                            <div class="relative">
+                                <x-basic-input type="password" name="Password" placeholder="Password . . . "
+                                    id="passwordInput1" value="{{ old('inputan') }}" />
+                                <button type="button" onclick="togglePassword1()"
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500">
+                                    <i id="toggleIcon1" class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="mt-4">
-                            <label for="" class="text-sm text-slate-400 font-semibold">Confirm Password:</label>
-                            <input required placeholder="Confirm Password..." name="confirm-password"
-                                class=" text-gray-700 focus:outline-none focus:shadow-outline  border border-gray-300 focus:ring-2 focus:ring-blue-800 rounded-xl focus:bg-blue-50 py-2 px-4 block w-full appearance-none"
-                                type="password" />
+                            <label for="input" class="text-sm text-slate-400 font-semibold">Confirm Password:</label>
+                            <div class="relative">
+                                <x-basic-input type="password" name="confirm-password"
+                                    placeholder="Confirm Password . . . " id="passwordInput2"
+                                    value="{{ old('inputan') }}" />
+                                <button type="button" onclick="togglePassword2()"
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500">
+                                    <i id="toggleIcon2" class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="mt-4 flex justify-end w-full">
-                            <a href="#"
-                                class="text-sm text-gray-500 underline hover:text-gray-700 font-semibold">Lupa
-                                Password?</a>
-                        </div>
-                        <div class="mt-4">
+
+                        <div class="mt-8">
                             <button class="btn-primary w-full">
-                                Sign Up</button>
+                                Sign In</button>
                         </div>
-                        <div class="mt-8 text-center text-gray-500">
-                            Sudah Memiliki Akun? <a href="{{ route('login-page') }}"
-                                class="text-gray-500 hover:text-gray-700 font-semibold underline">Sign In</a>
+                        <div class="mt-8 text-center text-gray-500 whitespace-nowrap">
+                            Apakah Anda Belum Mempunyai Akun? <a href="{{ route('register-page') }}"
+                                class="text-gray-500 hover:text-gray-700 font-semibold underline">Sign Up</a>
                         </div>
                     </div>
                 </form>
@@ -109,6 +116,39 @@
         </div>
     </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        function togglePassword1() {
+            const passwordInput1 = document.getElementById('passwordInput1');
+            const toggleIcon1 = document.getElementById('toggleIcon1');
+
+            if (passwordInput1.type === 'password') {
+                passwordInput1.type = 'text';
+                toggleIcon1.classList.remove('fa-eye');
+                toggleIcon1.classList.add('fa-eye-slash');
+            } else {
+                passwordInput1.type = 'password';
+                toggleIcon1.classList.remove('fa-eye-slash');
+                toggleIcon1.classList.add('fa-eye');
+            }
+        }
+
+        function togglePassword2() {
+            const passwordInput2 = document.getElementById('passwordInput2');
+            const toggleIcon2 = document.getElementById('toggleIcon2');
+
+            if (passwordInput2.type === 'password') {
+                passwordInput2.type = 'text';
+                toggleIcon2.classList.remove('fa-eye');
+                toggleIcon2.classList.add('fa-eye-slash');
+            } else {
+                passwordInput2.type = 'password';
+                toggleIcon2.classList.remove('fa-eye-slash');
+                toggleIcon2.classList.add('fa-eye');
+            }
+        }
+    </script>
 </body>
 
 </html>
