@@ -2,7 +2,23 @@
 
 @section('body')
     <div class="mx-auto max-w-screen-xl">
-        <div class="flex gap-4">
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="card-rank">
+                <div class="py-4">
+                    <img class="h-24 w-auto" src="{{ asset('img/logo-ec.svg') }}" class="h-5"/>
+                </div>
+                <a href="#"
+                    class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                    <i class="fa-solid fa-gears me-2"></i>
+                    Rangking 2024
+                </a>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold">99999
+                </h2>
+                <p class="text-md font-normal text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+        <div class="flex gap-4 mt-16">
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
                 <a href="#"
                     class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
@@ -103,7 +119,7 @@
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        {{-- <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 <a href="#"
                     class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
@@ -154,7 +170,7 @@
                     </svg>
                 </a>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 

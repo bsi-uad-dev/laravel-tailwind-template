@@ -3,46 +3,44 @@
 
 {{-- Sidebar Start --}}
 <aside id="logo-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
     aria-label="Sidebar">
+    <div class="px-4 py-8 flex justify-center">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="{{ asset('img/logo-ec.svg') }}" class="h-5" alt="Flowbite Logo" />
+            <span class="self-center text-xl font-semibold whitespace-nowrap">{{ config('app.name') }}</span>
+        </a>
+    </div>
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white">
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                        <path
-                            d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                        <path
-                            d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                    </svg>
-                    <span class="ms-3">Dashboard</span>
+                <a href="{{ route('example-page') }}" class="side-menu {{ Request::is('example*') ? 'side-menu-active' : '' }}">
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </div>
                 </a>
             </li>
             <li>
                 <button type="button"
-                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100"
+                    class="side-menu {{ Request::is('test*') ? 'side-menu-active' : '' }}"
                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                    <i class="fa-solid fa-file-invoice text-gray-500 text-2xl"></i>
-                    <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Dropdown</span>
-                    <i class="fa-solid fa-angle-down transform transition-transform duration-300 ease-in-out"
-                        id="dropdown-icon"></i>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Dropdown</span>
+                    </div>
+                    <i class="fa-solid fa-angle-down"></i>
                 </button>
-                <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                <ul id="dropdown-example" class="{{ Request::is('test*') ? 'flex' : '' }}hidden py-2 space-y-2">
                     <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">Dropdown
-                            1</a>
+                        <a href="{{ route('test-page') }}"
+                            class="sub-menu {{ Request::is('test') ? 'sub-menu-active' : '' }}">
+                            Test</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">Dropdown
+                        <a href=""
+                            class="sub-menu {{ Request::is('') ? 'sub-menu-active' : '' }}">Dropdown
                             2</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">Dropdown
-                            3</a>
                     </li>
                 </ul>
             </li>
@@ -52,16 +50,27 @@
 
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                        <path
-                            d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                        <path
-                            d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                    </svg>
-                    <span class="ms-3">Users</span>
-                </a>
+                <button type="button"
+                    class="side-menu {{ Request::is('') ? 'side-menu-active' : '' }}"
+                    aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Master</span>
+                    </div>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <ul id="dropdown-example" class="{{ Request::is('') ? 'flex' : '' }}hidden py-2 space-y-2">
+                    <li>
+                        <a href=""
+                            class="sub-menu {{ Request::is('') ? 'sub-menu-active' : '' }}">
+                            Test</a>
+                    </li>
+                    <li>
+                        <a href=""
+                            class="sub-menu {{ Request::is('') ? 'sub-menu-active' : '' }}">Dropdown
+                            2</a>
+                    </li>
+                </ul>
             </li>
         </ul>
 
