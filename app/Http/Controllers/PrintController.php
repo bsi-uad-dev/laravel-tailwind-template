@@ -13,7 +13,7 @@ class PrintController extends Controller
 {
     //
 
-    public function printReceipt($data)
+    public function printReceipt()
     {
         // Validasi data yang diterima dari request
         // $data = $request->validate([
@@ -48,7 +48,7 @@ class PrintController extends Controller
 
         try {
             // Menghubungkan ke printer thermal melalui CUPS
-            $connector = new CupsPrintConnector("GEZHI_micro_printer"); // Ganti dengan nama printer Anda
+            $connector = new CupsPrintConnector("eppos58"); // Ganti dengan nama printer Anda
             $printer = new Printer($connector);
 
             // Header
@@ -58,11 +58,16 @@ class PrintController extends Controller
             $printer->setEmphasis(false);
             $printer->text($data['store_tagline'] . "\n\n");
 
+            $printer->text("-------------------------------\n");
+            $printer->text("\n");
+
             // Print Itemized List
             $printer->setJustification(Printer::JUSTIFY_LEFT);
             foreach ($data['items'] as $item) {
                 $printer->text(sprintf("%-20s %7s\n", $item['name'], $item['price']));
             }
+            $printer->text("\n");
+
 
             $printer->text("-------------------------------\n");
 
@@ -73,6 +78,7 @@ class PrintController extends Controller
             // $printer->text("TOTAL:          Rp." . number_format($data['total'], 2) . "\n\n");
 
             // Footer
+            $printer->text("\n");
             $printer->setJustification(Printer::JUSTIFY_CENTER);
             $printer->text($data['footer_message'] . "\n\n");
 
